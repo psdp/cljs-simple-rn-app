@@ -1,8 +1,8 @@
 (ns simple-app.android.core
   (:require [simple-app.core :as core]
-            [simple-app.ui.screens.views :as views]))
+            [simple-app.ui.container :as container]))
 
-(def app-root views/main)
+(def app-root container/main)
 
 (defn init []
   (core/init app-root))

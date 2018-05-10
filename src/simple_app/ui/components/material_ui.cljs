@@ -1,10 +1,11 @@
 (ns simple-app.ui.components.material-ui
-  (:require [simple-app.js-deps :as js-deps]
-            [reagent.core :as r]))
+  (:require [reagent.core :as r]))
 
-(def theme-provider (r/adapt-react-class (.-ThemeProvider js-deps/react-native-material-ui)))
-(def button (r/adapt-react-class (.-Button js-deps/react-native-material-ui)))
-(def toolbar (r/adapt-react-class (.-Toolbar js-deps/react-native-material-ui)))
+(def ReactNativeMaterialUI (js/require "react-native-material-ui"))
+
+(def theme-provider (r/adapt-react-class (.-ThemeProvider ReactNativeMaterialUI)))
+(def button (r/adapt-react-class (.-Button ReactNativeMaterialUI)))
+(def toolbar (r/adapt-react-class (.-Toolbar ReactNativeMaterialUI)))
 
 (def colors
-  (js->clj (.-COLOR js-deps/react-native-material-ui) :keywordize-keys true))
+  (js->clj (.-COLOR ReactNativeMaterialUI) :keywordize-keys true))

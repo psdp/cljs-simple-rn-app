@@ -1,8 +1,8 @@
 (ns simple-app.events
-  (:require
-   [re-frame.core :refer [reg-event-db after]]
-   [clojure.spec.alpha :as s]
-   [simple-app.db :as db :refer [app-db]]))
+  (:require [clojure.spec.alpha :as s]
+            [re-frame.core :refer [after reg-event-db]]
+            [simple-app.db :as db :refer [app-db]]
+            simple-app.events.navigation))
 
 ;; -- Interceptors ------------------------------------------------------------
 ;;
