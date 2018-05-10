@@ -30,6 +30,11 @@ build/
 local.properties
 *.iml
 
+#ios
+ios/Pods
+ios/SimpleApp.xcworkspace
+.ruby-version
+
 # node.js
 #
 node_modules/
