@@ -1,0 +1,50 @@
+{:app-name "SimpleApp"
+
+ :cljsbuild
+ {:dev
+  {:ios
+   {:source-paths ["src"]
+    :compiler     {:output-to     "target/ios/app.js"
+                   :main          "env.ios.main"
+                   :output-dir    "target/ios"
+                   :npm-deps      false
+                   :optimizations :none}}
+   :android
+   {:source-paths ["src"]
+    :compiler     {:output-to     "target/android/app.js"
+                   :main          "env.android.main"
+                   :output-dir    "target/android"
+                   :npm-deps      false
+                   :optimizations :none}}}
+
+  :prod
+  {:ios
+   {:source-paths ["src" "env/prod"]
+    :compiler     {:output-to          "index.ios.js"
+                   :output-dir         "target/ios"
+                   :static-fns         true
+                   :optimize-constants true
+                   :optimizations      :simple
+                   :closure-defines    {"goog.DEBUG" false}
+                   :parallel-build     false
+                   :elide-asserts      true
+                   :language-in        :ecmascript5}}
+   :android
+   {:source-paths ["src" "env/prod"]
+    :compiler     {:output-to          "index.android.js"
+                   :output-dir         "target/android"
+                   :static-fns         true
+                   :optimize-constants true
+                   :optimizations      :simple
+                   :closure-defines    {"goog.DEBUG" false}
+                   :parallel-build     false
+                   :elide-asserts      true
+                   :language-in        :ecmascript5}}}}
+
+ ;; JS modules
+ :js-modules ["react-navigation"
+              "react-native-material-ui"
+              "react-native-vector-icons"]
+
+ ;; resoures
+ :resource-dirs ["resources/images"]}

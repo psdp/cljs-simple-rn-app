@@ -54,3 +54,17 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+
+# Figwheel
+figwheel_server.log
+
+.cpcache/
+.lein-repl-history
+.nrepl-port
+.lan-ip
+
+# Generated
+index.ios.js
+index.android.js
+target/
+env/dev/env/dev.cljs
